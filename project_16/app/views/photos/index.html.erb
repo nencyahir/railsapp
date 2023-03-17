@@ -1,0 +1,38 @@
+<h1>Photos</h1>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+}
+</style>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @photos.each do |photo| %>
+      <tr>
+        <td><%= photo.p_name %></td>
+        <td><%= photo.p_type %></td>
+        <td>
+          <%= link_to "Edit", edit_photo_path(photo) %>
+         
+        </td>
+        <td>
+        <%= link_to "Destroy",photo, method: :delete%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New Photo", new_photo_path %>
+
+
