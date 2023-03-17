@@ -1,0 +1,16 @@
+<h1>Put your details</h1>
+<%= form_with(model: [:admin, user]) do |form| %>
+  <div>
+    <%= form.label :u_name %>
+    <%= form.text_field :u_name %>
+  </div>
+  
+  <div>
+    <%= form.label :u_tec %>
+    <%= form.text_field :u_tec %>
+  </div>
+  
+  <%= form.submit %>
+<% end %>
+
+<%= link_to "Back", admin_users_path %>

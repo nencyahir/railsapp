@@ -1,0 +1,4 @@
+<h1>photo details</h1>
+<h1><%= @photo.p_name %></h1>
+<p>Type:</strong> <%= @photo.p_type %></p>
+<td><%= link_to "Delete", photos_path, data: { turbo_method: :delete } %>
