@@ -1,0 +1,5 @@
+gu:
+  hello: "નમસ્તે %{name}!"
+  users:
+    one: "1 ગણતરી"
+    other: "%{count} ગણતરી"
