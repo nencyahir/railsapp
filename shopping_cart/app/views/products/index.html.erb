@@ -1,0 +1,49 @@
+<h1>Products</h1>
+
+
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+}
+</style>
+
+<h1>List of Products</h1>
+
+<table style="border: 1px solid black">
+<thead >
+    <tr>
+        <th>Name</th><br> 
+        <th>Price</th>
+        <th>Show</th>
+        <th>add</th>
+    </tr>
+   
+</thead>
+<tbody>
+
+<% cache('products') do %>
+  <% @products.each do |product| %>
+     <tr>
+      <td><%= product.name %></td>
+      <td><%= number_to_currency(product.price) %></td>
+      <td><%= link_to "Show this product", product ,:class => "btn btn-secondary"%></td>
+      <td><%=link_to "Add #{product.name} to cart", add_to_cart_products_path(product),:class => "btn btn-primary" %></td>
+      </tr>
+  <% end %>
+<% end %>
+
+</tbody>
+</table>
+
+<br>
+<%= link_to "New product", new_product_path,:class => "btn btn-danger" %>
+<br>
+<%= form_tag('/logout', method: :delete) do %>
+  <%= submit_tag "Log Out" %>
+<% end %>
+
+
