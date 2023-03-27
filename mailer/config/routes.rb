@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :products
   root "users#new"
 
-  resorces :users
+  resources :users
 
  
   
