@@ -1,6 +1,22 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+
+  ActionMailer::Base.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 465,
+    domain: 'gmail.com',
+    user_name: Rails.application.credentials.dig(:set_mailer ,:P_USERNAME),
+
+    password: Rails.application.credentials.dig(:set_mailer ,:P_PASSWORD),
+
+    authentication: 'plain',
+    :ssl =>true,
+    :tsl =>true,
+    enable_starttls_auto: true
+}
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
