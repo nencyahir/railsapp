@@ -1,0 +1,13 @@
+<h1>All Company</h1>
+
+<ul>
+  <% @companies.each do |c| %>
+    <li>
+      <%= c.name%>
+      <%= button_to "delete" ,method: :delete%>
+
+    </li>
+  <% end %>
+</ul>
+
+
